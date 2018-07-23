@@ -118,7 +118,9 @@ int UART_Init(mxc_uart_regs_t *uart, const uart_cfg_t *cfg, const sys_cfg_uart_t
                    (cfg->extra_stop << MXC_F_UART_CTRL_EXTRA_STOP_POS) |
                    (cfg->parity << MXC_F_UART_CTRL_PARITY_POS) |
                    (cfg->cts << MXC_F_UART_CTRL_CTS_EN_POS) |
-                   (cfg->rts << MXC_F_UART_CTRL_RTS_EN_POS));
+                   (cfg->cts << MXC_F_UART_CTRL_CTS_POLARITY_POS) |
+                   (cfg->rts << MXC_F_UART_CTRL_RTS_EN_POS) |
+                   (cfg->rts << MXC_F_UART_CTRL_RTS_POLARITY_POS));		      
 
     // Configure the baud rate and divisor
     uart_clk = SYS_UART_GetFreq(uart);

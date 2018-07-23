@@ -209,19 +209,23 @@ void serial_irq_set(serial_t *obj, SerialIrq irq, uint32_t enable)
 
     switch (obj->index) {
         case 0:
-            NVIC_SetVector(UART0_IRQn, (uint32_t)uart0_handler);
+            objs[0] = obj;
+	    NVIC_SetVector(UART0_IRQn, (uint32_t)uart0_handler);
             NVIC_EnableIRQ(UART0_IRQn);
             break;
         case 1:
-            NVIC_SetVector(UART1_IRQn, (uint32_t)uart1_handler);
+            objs[1] = obj;
+	    NVIC_SetVector(UART1_IRQn, (uint32_t)uart1_handler);
             NVIC_EnableIRQ(UART1_IRQn);
             break;
         case 2:
-            NVIC_SetVector(UART2_IRQn, (uint32_t)uart2_handler);
+            objs[2] = obj;
+	    NVIC_SetVector(UART2_IRQn, (uint32_t)uart2_handler);
             NVIC_EnableIRQ(UART2_IRQn);
             break;
         case 3:
-            NVIC_SetVector(UART3_IRQn, (uint32_t)uart3_handler);
+            objs[3] = obj;
+	    NVIC_SetVector(UART3_IRQn, (uint32_t)uart3_handler);
             NVIC_EnableIRQ(UART3_IRQn);
             break;
         default:
