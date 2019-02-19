@@ -5245,7 +5245,7 @@
     "MAX32620HSP": {
         "inherits": ["Target"],
         "core": "Cortex-M4F",
-        "extra_labels": ["Maxim", "MAX32620"],
+        "extra_labels": ["Maxim", "MAX32620", "CORDIO"],
         "supported_toolchains": ["GCC_ARM", "IAR", "ARM"],
         "device_has": [
             "ANALOGIN",
@@ -5380,7 +5380,7 @@
             "BLE_HCI_UART",
             "OPEN_DRAIN_LEDS"
         ],
-        "extra_labels": ["Maxim", "MAX32630"],
+        "extra_labels": ["Maxim", "MAX32630", "CORDIO"],
         "supported_toolchains": ["GCC_ARM", "IAR", "ARM"],
         "device_has": [
             "ANALOGIN",
